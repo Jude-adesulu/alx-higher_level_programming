@@ -1,14 +1,18 @@
 #!/usr/bin/python3
-"""The class MyInt that inherits from int"""
+"""
+function that inserts a line of text to a file, after each line containing a specific string
+"""
 
 
-class MyInt(int):
-    """Defines the objects"""
-
-    def __eq__(self, other):
-        """False if two objects(int) are differents"""
-        return int(self) != other
-
-    def __ne__(self, other):
-        """True if two objects(int) are the same"""
-        return int(self) == other
+def append_after(filename="", search_string="", new_string=""):
+    '''module Search and update
+    '''
+    with open(filename, 'r+') as f:
+        lines = f.readlines()
+        i = 0
+        for line in lines:
+            if line.find(search_string) is not -1:
+                lines.insert(i + 1, new_string)
+            i += 1
+        f.seek(0)
+        f.write("".join(lines))
