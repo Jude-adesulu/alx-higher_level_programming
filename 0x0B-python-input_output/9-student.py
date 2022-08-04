@@ -1,15 +1,20 @@
 #!/usr/bin/python3
-"""
-Class BaseGeometry based in the last task
-"""
-BaseGeometry = __import__('7-base_geometry').BaseGeometry
+''' a class Student that defines a student
+'''
 
 
-class Rectangle(BaseGeometry):
-    """init objects"""
-    def __init__(self, width, height):
-        """Arguments would be checked by 'integer_validator()"""
-        self.integer_validator("width", width)
-        self.integer_validator("height", height)
-        self.__width = width
-        self.__height = height
+class Student:
+    '''module class student
+    '''
+
+    def __init__(self, first_name, last_name, age):
+        '''method __init__
+        '''
+        self.first_name = first_name
+        self.last_name = last_name
+        self.age = age
+
+    def to_json(self):
+        '''method to_json
+        '''
+        return self.
